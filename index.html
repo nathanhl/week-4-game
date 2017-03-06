@@ -3,56 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>~The Psychic Game~</title>
+    <title>Pokemon Collectors</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Diplomata+SC|Lemonada|Raleway|Rubik+Mono+One" rel="stylesheet">
 </head>
 
 <body>
     <div class="content">
-        <div class="col-md-2">
+        <div>
+            <h1>Pokemon Collectors</h1>
         </div>
-        <div class="col-md-8 text-center">
-            <header>
-                <h1>Galaxy Psychics</h1>
-            </header>
-            <div class="information">
-                <h2>Guess which letter of the alphabet the galaxy has picked to test your psychic abilities!</h2>
+        <div class="instructions">
+            <h2>Here's how to play the game!</h2>
+            <br>
+            <ol>
+                <li>The game will assign you a number to achieve</li>
+                <li>Below you will find four wild Pokemon!</li>
                 <br>
-                <img src="assets/images/transparentstars.png" style="width:404px;height:180px;">
-            </div>
-            <div id="game">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <p id="wins">Your Total Wins: </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p id="losses">Your Total Losses: </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p id="guessesRemaining">Guesses Remaining: </p>
-                    </li>
-                    <li class="list-group-item">
-                        <p id="letters">Your Guesses So Far: </p>
-                    </li>
+                <ul>
+                    <li id="orange">Charmander</li>
+                    <li id="yellow">Jolteon</li>
+                    <li id="green">Bulbasaur</li>
+                    <li id="blue">Mudkip</li>
                 </ul>
-            </div>
-            <div class="col-md-2">
-            </div>
+                <br>
+                <li>Each crystal has a specific point value that will be added to your total score after each time they are clicked.</li>
+                <br>
+                <li>You win by matching your total score to the random number that the game picks for you.</li>
+                <br>
+                <li>You lose if your total score exceeds the random number that was generated.</li>
+                <br>
+                <li>You will not know the value of each crystal until you click on it!</li>
+                <br>
+                <li>The value of each crystal will change each time you play the game.</li>
+                <br>
+                <li>Good luck and have fun!</li>
+            </ol>
+            <br>
+            <br>
         </div>
-    </div>
-    <div class="col-md-12">
-        <div class="my footer">
-            <footer class="footer text-center">
-                <div class="container"><br><br>
-                    <p>&copy; Nathan Leung</p>
-                </div>
-            </footer>
+        <div class="numberToMatch">
+            <h3>Number to Reach: 
+            <div id= "randomNumber"></div>
+        </h3>
         </div>
-    </div>
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+        <br>
+        <div class="winsAndLosses">
+            <h4>Wins:
+            <div id= "numberofWins"></div>
+            <br>
+            Losses:
+            <div id= "numberofLosses"></div>
+        </h4>
+        </div>
+        <div class="gems">
+            <img src="assets/images/gemTwo.gif" class=g emImage id="gemOne" alt="Yellow Gem" height="100px">
+            <img src="assets/images/gemOne.gif" class=g emImage id="gemTwo" alt="OrangeGem" height="100px">
+            <img src="assets/images/gemThree.gif" class=g emImage id="gemThree" alt="Green Gem" height="100px">
+            <img src="assets/images/gemFour.gif" class=g emImage id="gemFour" alt="Blue Gem" height="90px">
+        </div>
+        <div class="playerTotal">
+            <h5>Your total score is:
+            <div id="resultTotal"></div>
+        </h5>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>

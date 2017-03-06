@@ -1,59 +1,101 @@
-//Letter choices available
-var computerLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+$(document).ready(function(){
 
-//Setting all to zero
-var wins = 0;
-var losses = 0;
-var guesses = 7;
-var guessesRemaining = 7;
-var guessedLetters = [];
-var letterToGuess = null;
-var computerGuess = computerLetters[Math.floor(Math.random() * computerLetters.length)];
+    //Declares that the player total, wins and losses starts at 0 when the page loadss
+    var playerTotal= 0;
+    var wins= 0;
+    var losses= 0;
 
-var updateGuessesRemaining = function() {
-    document.querySelector('#guessesRemaining').innerHTML = "Guesses left: " + guessesRemaining;
-};
+    //Random number that is shown at the beginning of the game
+    //Number is between 19 - 120
+    var Random=Math.floor(Math.random()*101+19);
 
-var updateLetterToGuess = function() {
-    this.letterToGuess = this.computerLetters[Math.floor(Math.random() * this.computerLetters.length)];
-};
+    //Append the random number to the randomNumber id in the html
+    $('#randomNumber').text(Random);
 
-var updateGuessesSoFar = function() {
-    document.querySelector('#letters').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
-};
+    //Assigns a random number to 
+    var gem1= Math.floor(Math.random()*11+1);
+    var gem2= Math.floor(Math.random()*11+1);
+    var gem3= Math.floor(Math.random()*11+1);
+    var gem4= Math.floor(Math.random()*11+1);
 
-var reset = function() {
-    totalGuesses = 7;
-    guessesRemaining = 7;
-    guessedLetters = [];
+    //Displays the number of wins and losses in the corresponding divs
+    $('#numberofWins').text(wins);
+    $('#numberofLosses').text(losses);
 
-    updateLetterToGuess();
-    updateGuessesRemaining();
-    updateGuessesSoFar();
-};
+    //Defines the reset function for the game
+    function reset(){
+        Random=Math.floor(Math.random()*101+19);
+        console.log(Random);
+        $('#randomNumber').text(Random);
+        playerTotal= 0;
+        var gem1= Math.floor(Math.random()*11+1);
+        var gem2= Math.floor(Math.random()*11+1);
+        var gem3= Math.floor(Math.random()*11+1);
+        var gem4= Math.floor(Math.random()*11+1);
+        $('#resultTotal').text(playerTotal);
+    }
 
-updateLetterToGuess();
-updateGuessesRemaining();
-
-document.onkeyup = function(event) {
-    guessesRemaining--;
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-    guessedLetters.push(userGuess);
-    updateGuessesRemaining();
-    updateGuessesSoFar();
-
-    if (guessesRemaining > 0) {
-        if (userGuess == letterToGuess) {
-            wins++;
-            document.querySelector('#wins').innerHTML = "Your Total Wins: " + wins;
-            alert("Wow, you're supergalactic!");
-            reset();
-        }
-    } else if (guessesRemaining == 0) {
-        losses++;
-        document.querySelector('#losses').innerHTML = "Your Total Losses: " + losses;
-        alert("Nice try, but go back to the void!");
+    //Increases wins
+    function win(){
+        alert('Youre a winner, baby!');
+        wins++;
+        $('#numberofWins').text(wins);
         reset();
     }
-};
+
+    //Increases losses
+    function loss(){
+        alert('Youre a loser, baby!');
+        losses++;
+        $('#numberofLosses').text(losses);
+        reset();
+    }
+
+    //Defining on-click functions for each jewel
+    $('#gemOne').on ('click', function(){
+        playerTotal = playerTotal + gem1;
+        console.log("New playerTotal= " + playerTotal);
+        $('#resultTotal').text(playerTotal);
+            if (playerTotal === Random){
+                win();
+            }
+                else if (playerTotal > Random){
+                loss();
+            }
+         });
+    $('#gemTwo').on ('click', function(){
+        playerTotal = playerTotal + gem2;
+        console.log("New playerTotal= " + playerTotal);
+        $('#resultTotal').text(playerTotal);
+            if (playerTotal === Random){
+                win();
+            }
+                else if (playerTotal > Random){
+                loss();
+            }
+         });
+    $('#gemThree').on ('click', function(){
+        playerTotal = playerTotal + gem3;
+        console.log("New playerTotal= " + playerTotal);
+        $('#resultTotal').text(playerTotal);
+            if (playerTotal === Random){
+                win();
+            }
+                else if (playerTotal > Random){
+                loss();
+            }
+         });
+    $('#gemFour').on ('click', function(){
+        playerTotal = playerTotal + gem4;
+        console.log("New playerTotal= " + playerTotal);
+        $('#resultTotal').text(playerTotal);
+            if (playerTotal === Random){
+                win();
+            }
+                else if (playerTotal > Random){
+                loss();
+            }
+         });
+
+});
+

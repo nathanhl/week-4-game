@@ -1,31 +1,72 @@
-
 body{
-	background-image: url("../../assets/images/Galaxy.gif");
-	color: #ffffff;
-	border-color: #dddddd;
-	font-size: 16px;
-	line-height: 40px;
-	font-family: 'Gloria Hallelujah', cursive;
-    height: 100%;  	
+	background-image: url("../images/background.png");
 }
-
+div{
+	margin: 10px;
+	width: 100%;
+	text-align: center;
+}
 h1{
-	font-size:100px;
-	line-height: 130px;
+	font-family: 'Diplomata SC', cursive;
+	color: #000000;
+	font-size: 50px;
 }
 h2{
-	font-size:20px;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Lemonada', cursive;
+	font-weight: bold;
+	font-size: 20px;
 }
-#game{
-	text-align: left;
-	color:#000000;
-}
-
-#container{
-	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	clear: both;	
+.instructions{
+	color: #000000;
+	font-family: 'Raleway', sans-serif;
+	font-size:12px;
 }
 
+.numberToMatch{
+	color: #000000;
+	font-family: 'Lemonada', cursive;
+	text-align: center;
+	font-weight:bold;
+}
+#randomNumber{
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	text-indent: -20px;
+}
+
+.winsAndLosses{
+	color: #000000;
+	font-family: 'Lemonada', cursive;
+	font-weight:bold;
+}
+
+#numberofWins, #numberofLosses, #resultTotal{	
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	text-indent: -20px;
+}
+
+.playerTotal{
+	color: #000000;
+	font-family: 'Lemonada', cursive;
+	font-weight:bold;
+}
+
+.container{
+	color: #000000;
+	font-family: 'Lemonada', cursive;
+	text-align:center
+	width:75%;
+}
+#blue{
+	color: blue;
+}
+#green{
+	color: green;
+}
+#orange{
+	color: orange;
+}
+#yellow{
+	color: yellow;
+}
