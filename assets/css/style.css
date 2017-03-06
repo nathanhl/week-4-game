@@ -1,0 +1,31 @@
+
+body{
+	background-image: url("../../assets/images/Galaxy.gif");
+	color: #ffffff;
+	border-color: #dddddd;
+	font-size: 16px;
+	line-height: 40px;
+	font-family: 'Gloria Hallelujah', cursive;
+    height: 100%;  	
+}
+
+h1{
+	font-size:100px;
+	line-height: 130px;
+}
+h2{
+	font-size:20px;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+#game{
+	text-align: left;
+	color:#000000;
+}
+
+#container{
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	clear: both;	
+}
+
